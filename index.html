@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<html>
+
+	<body>
+
+<head>
+
+<title>JavaScript program to calculate multiplication and division of two numbers </title>
+
+<meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+
+   .box1
+  {
+            width:350px;
+            height:50px;  
+            background-color:black;
+            border-top-left-radius: 20px !important;
+            border-top-right-radius: 20px !important;
+            margin-left:500px;
+            padding:10px;
+  }
+
+.box2
+ {
+       width:350px;
+       height:600px;
+       background-color:lightskyblue;
+       border: 1px solid grainsboro !important;
+       border-top-left-radius: 0px !important;
+       border-bottom-left-radius: 20px !important;
+       border-top-right-radius: 0px !important;
+       border-bottom-right-radius:20px !important;
+       margin-left:500px;
+       position:sticky;
+     
+   } 
+
+.heading1
+
+   {
+    color:white;
+    font-size:20px;
+    text-align:center;
+
+   }
+
+.box3
+  {  margin-left:20px;}
+
+.form-control
+{
+    width:300px;
+    height:40px;
+
+}
+
+
+.span
+
+{
+
+ font-size:12px;
+
+}
+</style>
+
+<script>
+function Tip()
+{
+
+        bill = document.getElementById("Bill").value;
+        service = document.getElementById("Service").value;
+		numOfPeople = document.getElementById("NumOfPeople").value;
+ 
+   if (isNaN( bill ))
+  {
+	alert("Please insert a  number");
+  }
+ else if(isNaN( numOfPeople ))
+  {
+	alert("Please insert a number");
+  }
+ else if(  service < 1)
+  {
+	alert("Please check your service input");
+   
+  }
+
+ else
+
+  {
+	document.getElementById("result1").innerHTML = ( bill  * (  service/ 100) ) / numOfPeople ;
+    document.getElementById("result2").innerHTML = ( service / 100) *  bill ;
+	document.getElementById("result3").innerHTML = ( bill  / numOfPeople) - - (( bill  * (  service / 100) ) / numOfPeople );
+    document.getElementById("result4").innerHTML = (  service / 100 ) *  bill  - -( bill );
+
+  }
+
+}
+</script>
+</head>
+
+<div class="box1">
+        <h1 class="heading1">TIP CALCULATOR</h1>
+       
+</div>
+		
+<div class="box2" >
+
+			<div class="box3"> 
+            <br>
+            
+             <div class="form-group">
+          
+
+                <label for="bill">How much was your bill?</label>
+                <br>
+
+                  N (Naira)
+
+                 <input type="text" class="form-control" id="Bill"  placeholder="Bill Amount"/>
+
+             </div>
+
+
+             <label for="service"> How was the service ?</label>
+
+          <div class="custom-select"  style="width:250px;">
+              <select id="Service" style="border:1px solid white; " >
+                  <option value="0" >Your service Tip percentage</option>
+                <option  value="5">5% Terrible</option>
+                <option  value="10">10% Bad</option>
+                <option  value="15">15%- It was ok</option>
+                <option  value="20"> 20%- Good</option>
+                <option  value="30"> 30%-outstanding</option>
+
+              </select>
+          </div>
+            
+<br>
+ <br>
+  <div class="form-group">
+
+      <label for="num of people">How many people are sharing the bill?</label> 
+   
+
+    <input  type="text"  class="form-control" id="NumOfPeople" placeholder="Number of people "/>
+
+  </div>
+
+  
+  <input type="button" class="btn btn-primary"  onClick="Tip()" Value="CALCULATE " />
+  <br><br>
+
+  <p>
+    
+    Tip per person : N <span id="result1" class=" span "></span>
+    <br><br>
+
+    Total Tip: N <span id="result2" class=" span "></span>
+    <br><br>
+
+    Total per person: N <span id="result3" class=" span "></span>
+    <br><br>
+
+    TOTAL AMOUNT: N <span id="result4" class=" span "></span>
+
+  </p>
+
+
+
+              </div>
+
+</div>
+
+
+
+
+
+</body>
+
+</html>
